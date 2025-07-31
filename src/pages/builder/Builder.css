@@ -1,0 +1,42 @@
+.builder-container {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+.builder-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.builder-main-content {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  padding-top: 60px; /* Height of the header */
+}
+
+.canvas {
+  flex-grow: 1;
+  background-color: #f0f2f5;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.page-preview {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.settings-panel {
+  width: 300px;
+  padding: 20px;
+  border-left: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  overflow-y: auto;
+}

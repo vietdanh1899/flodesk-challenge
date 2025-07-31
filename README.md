@@ -1,5 +1,38 @@
 # React + TypeScript + Vite
 
+## Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [pnpm](https://pnpm.io/) (used as the package manager)
+
+### Install dependencies
+```bash
+pnpm install
+```
+
+### Run the development server
+```bash
+pnpm dev
+```
+The app will start on [http://localhost:5173](http://localhost:5173) by default.
+
+### Build for production
+```bash
+pnpm build
+```
+
+### Preview the production build
+```bash
+pnpm preview
+```
+
+### Lint and format code
+```bash
+pnpm lint
+pnpm format
+```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

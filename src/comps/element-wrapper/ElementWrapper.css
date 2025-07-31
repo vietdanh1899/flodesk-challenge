@@ -1,0 +1,12 @@
+.element-wrapper {
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.element-wrapper:hover {
+  border-color: #007bff;
+}
+
+.element-wrapper.selected {
+  border-color: #0056b3;
+}
