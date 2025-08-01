@@ -7,33 +7,9 @@ import "./Builder.css";
 import "../../comps/controls/controls.css";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../header/Header.tsx";
-import "../header/Header.css";
 import { templates } from "../../templates";
 import ElementSettings from "../../comps/ElementSettings.tsx";
 import PageSettings from "../../comps/PageSettings.tsx";
-
-const exportStyle = `
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-.canvas {
-  min-height: 100vh;
-  background-color: #f0f2f5;
-  overflow-y: auto;
-  display: flex;
-  justify-content: center;
-}
-
-.page-preview {
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;}
-`;
 
 const Builder: React.FC = () => {
   const dispatch = useDispatch();
@@ -59,21 +35,6 @@ const Builder: React.FC = () => {
     dispatch(selectElement(null));
   };
 
-  const handleExport = () => {
-    const preview = document.querySelector(".canvas");
-    if (preview) {
-      // Wrap the preview HTML with the styles
-      const html = `<!DOCTYPE html><html><head><style>${exportStyle}</style></head><body>${preview.outerHTML}</body></html>`;
-      const blob = new Blob([html], { type: "text/html" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "page.html";
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-  };
-
   if (!selectedTemplateId || !pageSettings) {
     return null;
   }
@@ -82,7 +43,7 @@ const Builder: React.FC = () => {
 
   return (
     <div className="builder-page">
-      <Header onExport={handleExport} />
+      <Header />
       <div className="builder-main-content">
         <div className="canvas" onClick={handleDeselect}>
           <div
